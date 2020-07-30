@@ -30,7 +30,7 @@ entree_ingredient table:
 
 - ingredient_id: int
 - entree_id: int
-- foreign_id: foreign
+- entree_num: foreign
 
 entree {1}→cooking_steps{1}
 
