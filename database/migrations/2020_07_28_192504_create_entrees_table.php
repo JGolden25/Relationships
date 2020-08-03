@@ -14,12 +14,11 @@ class CreateEntreesTable extends Migration
     public function up()
     {
         Schema::create('entrees', function (Blueprint $table) {
-            $table->id('id');
+            $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->string('description')->default('');
+            $table->string('description')->nullable();
             $table->integer('price')->default(0);
-
         });
     }
 

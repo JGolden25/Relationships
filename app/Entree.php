@@ -8,23 +8,19 @@ class Entree extends Model
 {
 
     protected $fillable = [
-        'name'
+        'name',
+        'price',
+        'decription',
+        'id'
     ];
-    public function entrees()
+    public function ingredients()
     {
-        //return $this->belongsToMany(RelatedModel,
-        // pivot_table_name,
-        // foreign_key_of_current_model_in_pivot_table,
-        // foreign_key_of_other_model_in_pivot_table);
-        return $this->belongsToMany(
-            Entree::class,
-            'entree_num',
-            'entree_id',
-            'ingredient_id'
-        );
+        return $this->belongsToMany(Ingredients::class);
+    }
+
+    public function cookingSteps()
+    {
+        return $this->hasMany(CookingSteps::class);
     }
 
 }
-
-$entrees = Entree::find(1);
-$entrees->ingredients;
